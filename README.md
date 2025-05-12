@@ -8,9 +8,9 @@ This backend is designed with real-world production features such as rate limiti
 
 ## 🌐 Live Demo
 
-Check out the live API: [https://notes-api-a6e8.onrender.com/api-docs/](https://notes-api-a6e8.onrender.com/api-docs/)
+Check out the live API: [https://book-store-api-b1d1.onrender.com/api-docs/](https://notes-api-a6e8.onrender.com/api-docs/)
 
-[![Live Demo](https://img.shields.io/badge/-LIVE_DEMO-2ea44f?style=for-the-badge)](https://notes-api-a6e8.onrender.com/api-docs/)
+[![Live Demo](https://img.shields.io/badge/-LIVE_DEMO-2ea44f?style=for-the-badge)](https://book-store-api-b1d1.onrender.com/api-docs/)
 
 ## 🚀 Features
 
@@ -67,14 +67,20 @@ src/
 
 ---
 
-## 📦 Getting Started
+## 🧪 Getting Started
 
-### 1. Clone & Install
+### Prerequisites
+
+- Node.js v18+
+- MongoDB (local or Atlas)
+
+### Setup
+
+1. **Clone the repo**
 
 ```bash
-git clone https://github.com/your-username/notes-api.git
-cd notes-api
-npm install
+git clone https://github.com/yourusername/book-store-api.git
+cd book-store-api
 ```
 
 ### 2. Set Environment Variables
@@ -100,21 +106,41 @@ npm run build && npm start
 
 ## 🛠️ API Endpoints (Brief)
 
-| Method | Endpoint                     | Description             |
-| ------ | ---------------------------- | ----------------------- |
-| POST   | `/api/auth/register`         | Register new user       |
-| POST   | `/api/auth/login`            | Login user              |
-| GET    | `/api/notes`                 | Get paginated notes     |
-| POST   | `/api/notes`                 | Create new note         |
-| PUT    | `/api/notes/:noteId`         | Update a note           |
-| DELETE | `/api/notes/:noteId`         | Delete a note           |
-| GET    | `/api/notes/search?query=`   | Search notes            |
-| GET    | `/api/notes/tag/:tagName`    | Filter notes by tag     |
-| PATCH  | `/api/notes/archive/:noteId` | Archive a note          |
-| GET    | `/api/notes/archived`        | Get archived notes      |
-| GET    | `/api/notes/:noteId/export`  | Export note as PDF      |
-| GET    | `/api/notes/export/zip`      | Export all notes as ZIP |
-| GET    | `/api/notes/analytics`       | Notes usage analytics   |
+View Swagger docs at:
+http://localhost:5000/api-docs
+
+| Method | Endpoint                 | Access        | Description                |
+| ------ | ------------------------ | ------------- | -------------------------- |
+| POST   | `/api/register`          | Public        | Register new user          |
+| POST   | `/api/login`             | Public        | Login and receive JWT      |
+| GET    | `/api/users/me`          | Authenticated | Get logged-in user profile |
+| GET    | `/api/users/me/books`    | Authenticated | Get books created by user  |
+| PATCH  | `/api/users/promote/:id` | Admin only    | Promote user to admin      |
+| POST   | `/api/authors`           | Admin only    | Create new author          |
+| GET    | `/api/authors`           | Public        | List all authors           |
+| GET    | `/api/authors/:id`       | Public        | Get single author by ID    |
+| PUT    | `/api/authors/:id`       | Admin only    | Update author              |
+| DELETE | `/api/authors/:id`       | Admin only    | Delete author              |
+| POST   | `/api/genres`            | Admin only    | Create new genre           |
+| GET    | `/api/genres`            | Public        | List all genres            |
+| GET    | `/api/genres/:id`        | Public        | Get single genre by ID     |
+| PUT    | `/api/genres/:id`        | Admin only    | Update genre               |
+| DELETE | `/api/genres/:id`        | Admin only    | Delete genre               |
+| POST   | `/api/books`             | Admin only    | Create new book            |
+| GET    | `/api/books`             | Public        | List all books             |
+| GET    | `/api/books/:id`         | Public        | Get single book by ID      |
+| PUT    | `/api/books/:id`         | Admin only    | Update book                |
+| DELETE | `/api/books/:id`         | Admin only    | Delete book                |
+| POST   | `/api/orders`            | Authenticated | Place a new order          |
+| GET    | `/api/orders/my`         | Authenticated | Get current user’s orders  |
+
+## 🛡️ Security Middleware
+
+| Package            | Purpose                          |
+| ------------------ | -------------------------------- |
+| helmet             | Sets HTTP headers to secure app  |
+| cors               | Handles cross-origin requests    |
+| express-rate-limit | Limits repeated requests from IP |
 
 ## 📚 Swagger Docs
 

@@ -2,7 +2,6 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import mongoSanitize from "express-mongo-sanitize";
 
 import authRoutes from "./routes/authRoutes";
 import userRoutes from "./routes/userRoutes";
@@ -27,8 +26,6 @@ app.use(
     message: "Too many requests from this IP, please try again later.",
   })
 );
-
-app.use(mongoSanitize());
 
 app.use(express.json());
 
