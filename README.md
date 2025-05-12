@@ -8,7 +8,7 @@ This backend is designed with real-world production features such as rate limiti
 
 ## 🌐 Live Demo
 
-Check out the live API: [https://book-store-api-b1d1.onrender.com/api-docs/](https://notes-api-a6e8.onrender.com/api-docs/)
+Check out the live API: [https://book-store-api-b1d1.onrender.com/api-docs/](https://book-store-api-b1d1.onrender.com/api-docs/)
 
 [![Live Demo](https://img.shields.io/badge/-LIVE_DEMO-2ea44f?style=for-the-badge)](https://book-store-api-b1d1.onrender.com/api-docs/)
 
@@ -145,7 +145,7 @@ http://localhost:5000/api-docs
 ## 📚 Swagger Docs
 
 I've integrated Swagger for live API testing & docs.
-[Click here](https://notes-api-a6e8.onrender.com/api-docs/) for testing.
+[Click here](https://book-store-api-b1d1.onrender.com/api-docs/) for testing.
 
 ## 🧠 Author
 
